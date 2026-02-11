@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllStar - Ham Radio Presentation</title>
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>AllStar</h1>
+                <h3>Linking Repeaters with Voice over IP</h3>
+                <p>
+                    <img src="https://n2vlv.net/images/n2vlv.png" alt="N2VLV" style="height: 150px; border: none; background: none; box-shadow: none;">
+                </p>
+                <p>Jeffrey Honig — N2VLV</p>
+                <p><small><a href="https://n2vlv.net/">n2vlv.net</a> — <a href="mailto:n2vlv@honig.net">n2vlv@honig.net</a></small></p>
+                <aside class="notes">
+                    Welcome everyone. Today we'll be talking about AllStar Link,
+                    a VoIP-based system for linking amateur radio repeaters and nodes.
+                </aside>
+            </section>
+
+            <section>
+                <h2>What is AllStar?</h2>
+                <ul>
+                    <li>VoIP interconnect system for amateur radio</li>
+                    <li>Based on Asterisk PBX software</li>
+                    <li>Links repeaters, hotspots, and nodes worldwide</li>
+                    <li>Open source and free to use</li>
+                </ul>
+                <aside class="notes">
+                    AllStar Link uses the open-source Asterisk telephony engine
+                    adapted for amateur radio use.
+                </aside>
+            </section>
+
+            <section>
+                <h2>How It Works</h2>
+                <ul>
+                    <li>Each node gets a unique node number</li>
+                    <li>Nodes connect over the internet</li>
+                    <li>DTMF commands control connections</li>
+                    <li>Audio is transported as VoIP</li>
+                </ul>
+                <aside class="notes">
+                    Explain the basic architecture: radio to node to internet to node to radio.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Getting Started</h2>
+                <ol>
+                    <li>Register at allstarlink.org</li>
+                    <li>Get a node number</li>
+                    <li>Set up hardware (Raspberry Pi, USB sound device)</li>
+                    <li>Install and configure ASL software</li>
+                </ol>
+                <aside class="notes">
+                    Walk through the basic setup process.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Questions?</h2>
+                <p>73!</p>
+                <aside class="notes">
+                    Open the floor for questions.
+                </aside>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealNotes]
+        });
+    </script>
+</body>
+</html>
