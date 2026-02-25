@@ -22,236 +22,227 @@
         <img class="slide-logo" src="https://n2vlv.net/images/n2vlv.png" alt="N2VLV">
         <div class="slides">
 
-            <section>
-                <h1>AllstarLink</h1>
-                <h3>Repeaters, Hotspots and Nodes, Oh My!</h3>
-                <p>
-                    <img src="https://n2vlv.net/images/n2vlv.png" alt="N2VLV" style="height: 150px; border: none; background: none; box-shadow: none;">
-                </p>
-                <p>Jeffrey Honig — N2VLV</p>
-                <p><small><a href="https://n2vlv.net/">n2vlv.net</a> — <a href="mailto:n2vlv@honig.net">n2vlv@honig.net</a></small></p>
-                <aside class="notes">
-                    Welcome everyone. Today we'll be talking about AllStar Link,
-                    a VoIP-based system for linking amateur radio repeaters and nodes.
-                </aside>
-            </section>
+            <section data-markdown>
+                <textarea data-template>
+# AllstarLink
+### Repeaters, Hotspots and Nodes, Oh My!
 
-            <section>
-                <h2>What is AllstarLink?</h2>
-                <ul>
-                    <li>VoIP interconnect system for amateur radio</li>
-                    <li>Based on Asterisk PBX software</li>
-                    <li>Links repeaters, hotspots, and nodes worldwide</li>
-                    <li>Open source and free to use</li>
-                </ul>
-                <aside class="notes">
-                    AllstarLink uses the open-source Asterisk telephony engine
-                    adapted for amateur radio use.
-                </aside>
-            </section>
+![N2VLV](https://n2vlv.net/images/n2vlv.png) <!-- .element: style="height: 150px; border: none; background: none; box-shadow: none;" -->
 
-            <section>
-                <h2>History / Background</h2>
-                <ul>
-                    <li>Created by Jim Dixon, W6JL</li>
-                    <li>Built on the Asterisk open-source PBX</li>
-                    <li>First released in the early 2000s</li>
-                    <li>Now maintained by the AllstarLink community</li>
-                </ul>
-                <aside class="notes">
-                    Jim Dixon saw the potential of using VoIP and open-source
-                    telephony software to link amateur radio systems.
-                </aside>
-            </section>
+Jeffrey Honig — N2VLV
 
-            <section>
-                <h2>Compare to EchoLink and IRLP</h2>
-                <ul>
-                    <li><strong>EchoLink</strong> — PC/mobile app, simple to use, closed source</li>
-                    <li><strong>IRLP</strong> — Dedicated hardware, Linux-based, node-to-node</li>
-                    <li><strong>AllstarLink</strong> — Most flexible, open source, Asterisk-based</li>
-                    <li>AllstarLink can link to EchoLink nodes</li>
-                </ul>
-                <aside class="notes">
-                    Compare the three main VoIP linking systems.
-                    Each has trade-offs in complexity vs. flexibility.
-                </aside>
-            </section>
+[n2vlv.net](https://n2vlv.net/) — [n2vlv@honig.net](mailto:n2vlv@honig.net)
 
-            <section>
-                <h2>Architecture</h2>
-                <ul>
-                    <li>Servers run Asterisk with app_rpt module</li>
-                    <li>Nodes connect to radios via audio interfaces</li>
-                    <li>Nodes register with the AllstarLink network</li>
-                    <li>Audio transported over the internet as VoIP</li>
-                </ul>
-                <aside class="notes">
-                    Radio → Interface → Computer/Node → Internet → Node → Interface → Radio.
-                </aside>
-            </section>
+Note:
+Welcome everyone. Today we'll be talking about AllStar Link,
+a VoIP-based system for linking amateur radio repeaters and nodes.
 
-            <section>
-                <h2>Addressing</h2>
-                <ul>
-                    <li>Each node gets a unique node number</li>
-                    <li>Originally 5-digit numbers</li>
-                    <li>Now also 6-digit numbers as the network grows</li>
-                    <li>Node numbers used for connecting and DTMF commands</li>
-                </ul>
-                <aside class="notes">
-                    Node numbers are how you identify and connect to other stations.
-                </aside>
-            </section>
+---
 
-            <section>
-                <h2>Uses</h2>
-                <ul>
-                    <li>Access to a remote repeater</li>
-                    <li>Personal hotspot</li>
-                    <li>Linking two or more repeaters</li>
-                    <li>Conference bridges / hubs</li>
-                    <li>Remote base station</li>
-                </ul>
-                <aside class="notes">
-                    AllstarLink is versatile — from a simple hotspot on your desk
-                    to linking repeater networks across states or countries.
-                </aside>
-            </section>
+## What is AllstarLink?
 
-            <section>
-                <h2>Hardware</h2>
-                <ul>
-                    <li>Raspberry Pi (or other Linux computer)</li>
-                    <li>USB sound/radio interface (URI, modified CM108)</li>
-                    <li>Radio (for hotspot or repeater connection)</li>
-                    <li>Internet connection</li>
-                </ul>
-                <aside class="notes">
-                    A basic node can run on a Raspberry Pi with a USB interface
-                    and an inexpensive radio.
-                </aside>
-            </section>
+- VoIP interconnect system for amateur radio
+- Based on Asterisk PBX software
+- Links repeaters, hotspots, and nodes worldwide
+- Open source and free to use
 
-            <section>
-                <h2>Software</h2>
-                <ul>
-                    <li><strong>ASL3</strong> — Current official AllstarLink distribution</li>
-                    <li><strong>HamVoip</strong> — Alternative distribution, Arch Linux based</li>
-                    <li>Both based on Asterisk with app_rpt</li>
-                    <li>Debian/Raspberry Pi OS (ASL3) vs. Arch Linux (HamVoip)</li>
-                </ul>
-                <aside class="notes">
-                    Two main software options. ASL3 is the current community standard.
-                    HamVoip is an alternative with its own following.
-                </aside>
-            </section>
+Note:
+AllstarLink uses the open-source Asterisk telephony engine
+adapted for amateur radio use.
 
-            <section>
-                <h2>Linking to EchoLink</h2>
-                <ul>
-                    <li>AllstarLink nodes can connect to EchoLink</li>
-                    <li>Bridges the two networks together</li>
-                    <li>Expands reach to EchoLink users worldwide</li>
-                </ul>
-                <aside class="notes">
-                    This interoperability is a big advantage of AllstarLink.
-                </aside>
-            </section>
+---
 
-            <section>
-                <h2>Digital Radio Integration</h2>
-                <ul>
-                    <li>AllstarLink is primarily analog FM</li>
-                    <li><strong>DVSwitch</strong> — Bridge to DMR, D-STAR, YSF, P25, NXDN</li>
-                    <li>Connects analog AllstarLink to digital networks</li>
-                    <li>Other digital bridge solutions available</li>
-                </ul>
-                <aside class="notes">
-                    DVSwitch and similar tools let AllstarLink nodes
-                    interoperate with digital voice modes.
-                </aside>
-            </section>
+## History / Background
 
-            <section>
-                <h2>DTMF Commands</h2>
-                <ul>
-                    <li>Control your node from the radio keypad</li>
-                    <li>Connect to a node: <code>*3<em>node#</em></code></li>
-                    <li>Disconnect: <code>*1<em>node#</em></code></li>
-                    <li>Status, link info, and more</li>
-                </ul>
-                <aside class="notes">
-                    DTMF commands are the primary way operators interact
-                    with AllstarLink from the radio side.
-                </aside>
-            </section>
+- Created by Jim Dixon, W6JL
+- Built on the Asterisk open-source PBX
+- First released in the early 2000s
+- Now maintained by the AllstarLink community
 
-            <section>
-                <h2>Monitoring</h2>
-                <ul>
-                    <li><strong>allmon3</strong> — Web-based node monitor and control panel</li>
-                    <li><strong>supermon-ng</strong> — Enhanced web dashboard</li>
-                    <li>See connected nodes, link status, and activity</li>
-                    <li>Control connections from a browser</li>
-                </ul>
-                <aside class="notes">
-                    Both provide web interfaces for monitoring and managing
-                    your AllstarLink node remotely.
-                </aside>
-            </section>
+Note:
+Jim Dixon saw the potential of using VoIP and open-source
+telephony software to link amateur radio systems.
 
-            <section>
-                <h2>Hubs and Networks</h2>
-                <ul>
-                    <li>Hubs are always-on conference nodes</li>
-                    <li>Connect to a hub to talk with a group</li>
-                    <li>Regional and special-interest networks</li>
-                    <li>Examples: WIN System, HubNet, etc.</li>
-                </ul>
-                <aside class="notes">
-                    Hubs provide community gathering points on AllstarLink.
-                </aside>
-            </section>
+---
 
-            <section>
-                <h2>Demo: Hotspot</h2>
-                <aside class="notes">
-                    Live demo of connecting and using an AllstarLink hotspot.
-                </aside>
-            </section>
+## Compare to EchoLink and IRLP
 
-            <section>
-                <h2>Resources</h2>
-                <ul>
-                    <li><a href="https://allstarlink.org/">allstarlink.org</a></li>
-                    <li><a href="https://wiki.allstarlink.org/">AllstarLink Wiki</a></li>
-                    <li>Ham Radio Crusader (YouTube — setup guides)</li>
-                    <li>AllstarLink community on Discord</li>
-                </ul>
-                <aside class="notes">
-                    Point people to these resources for getting started
-                    and setting up their own nodes.
-                </aside>
-            </section>
+- **EchoLink** — PC/mobile app, simple to use, closed source
+- **IRLP** — Dedicated hardware, Linux-based, node-to-node
+- **AllstarLink** — Most flexible, open source, Asterisk-based
+- AllstarLink can link to EchoLink nodes
 
-            <section>
-                <h2>Questions?</h2>
-                <p>73!</p>
-                <aside class="notes">
-                    Open the floor for questions.
-                </aside>
+Note:
+Compare the three main VoIP linking systems.
+Each has trade-offs in complexity vs. flexibility.
+
+---
+
+## Architecture
+
+- Servers run Asterisk with app_rpt module
+- Nodes connect to radios via audio interfaces
+- Nodes register with the AllstarLink network
+- Audio transported over the internet as VoIP
+
+Note:
+Radio → Interface → Computer/Node → Internet → Node → Interface → Radio.
+
+---
+
+## Addressing
+
+- Each node gets a unique node number
+- Originally 5-digit numbers
+- Now also 6-digit numbers as the network grows
+- Node numbers used for connecting and DTMF commands
+
+Note:
+Node numbers are how you identify and connect to other stations.
+
+---
+
+## Uses
+
+- Access to a remote repeater
+- Personal hotspot
+- Linking two or more repeaters
+- Conference bridges / hubs
+- Remote base station
+
+Note:
+AllstarLink is versatile — from a simple hotspot on your desk
+to linking repeater networks across states or countries.
+
+---
+
+## Hardware
+
+- Raspberry Pi (or other Linux computer)
+- USB sound/radio interface (URI, modified CM108)
+- Radio (for hotspot or repeater connection)
+- Internet connection
+
+Note:
+A basic node can run on a Raspberry Pi with a USB interface
+and an inexpensive radio.
+
+---
+
+## Software
+
+- **ASL3** — Current official AllstarLink distribution
+- **HamVoip** — Alternative distribution, Arch Linux based
+- Both based on Asterisk with app_rpt
+- Debian/Raspberry Pi OS (ASL3) vs. Arch Linux (HamVoip)
+
+Note:
+Two main software options. ASL3 is the current community standard.
+HamVoip is an alternative with its own following.
+
+---
+
+## Linking to EchoLink
+
+- AllstarLink nodes can connect to EchoLink
+- Bridges the two networks together
+- Expands reach to EchoLink users worldwide
+
+Note:
+This interoperability is a big advantage of AllstarLink.
+
+---
+
+## Digital Radio Integration
+
+- AllstarLink is primarily analog FM
+- **DVSwitch** — Bridge to DMR, D-STAR, YSF, P25, NXDN
+- Connects analog AllstarLink to digital networks
+- Other digital bridge solutions available
+
+Note:
+DVSwitch and similar tools let AllstarLink nodes
+interoperate with digital voice modes.
+
+---
+
+## DTMF Commands
+
+- Control your node from the radio keypad
+- Connect to a node: `*3node#`
+- Disconnect: `*1node#`
+- Status, link info, and more
+
+Note:
+DTMF commands are the primary way operators interact
+with AllstarLink from the radio side.
+
+---
+
+## Monitoring
+
+- **allmon3** — Web-based node monitor and control panel
+- **supermon-ng** — Enhanced web dashboard
+- See connected nodes, link status, and activity
+- Control connections from a browser
+
+Note:
+Both provide web interfaces for monitoring and managing
+your AllstarLink node remotely.
+
+---
+
+## Hubs and Networks
+
+- Hubs are always-on conference nodes
+- Connect to a hub to talk with a group
+- Regional and special-interest networks
+- Examples: WIN System, HubNet, etc.
+
+Note:
+Hubs provide community gathering points on AllstarLink.
+
+---
+
+## Demo: Hotspot
+
+Note:
+Live demo of connecting and using an AllstarLink hotspot.
+
+---
+
+## Resources
+
+- [allstarlink.org](https://allstarlink.org/)
+- [AllstarLink Wiki](https://wiki.allstarlink.org/)
+- Ham Radio Crusader (YouTube — setup guides)
+- AllstarLink community on Discord
+
+Note:
+Point people to these resources for getting started
+and setting up their own nodes.
+
+---
+
+## Questions?
+
+73!
+
+Note:
+Open the floor for questions.
+                </textarea>
             </section>
 
         </div>
     </div>
 
     <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
     <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
-            plugins: [RevealNotes]
+            plugins: [RevealMarkdown, RevealNotes]
         });
     </script>
 </body>
