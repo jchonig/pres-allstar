@@ -8,7 +8,7 @@ A presentation about AllStar for amateur radio.
 
 ## Outline
 
-1. What is AllstarLink
+1. What is AllstarLink?
 2. History / Background
 3. Compare to EchoLink and IRLP
 4. Architecture (Servers, Nodes, how they connect)
@@ -19,8 +19,18 @@ A presentation about AllStar for amateur radio.
    - Linking repeaters
    - Conference bridges / hubs
    - Remote base
+   - Radioless nodes
 7. Hardware
-8. Software
+   = Server Hardware
+   - Sound Cards and interfaces
+      - DigiRig
+	  - TOADS
+	  - AIOC
+	  - ...
+   - Radios
+   - All-in-one and Sound Card combinations
+      - HotspotRadioUSB
+ca8. Software
    - ASL3
    - HamVoip
 9. Linking to EchoLink
