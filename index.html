@@ -55,6 +55,32 @@ Anyone can register a node for free at allstarlink.org.
 
 ---
 
+## History / Background
+
+- Created by Jim Dixon, W6JL
+- Built on the Asterisk open-source PBX
+- First released in the early 2000s
+- Now maintained by the AllstarLink community
+
+Note:
+Jim Dixon saw the potential of using VoIP and open-source
+telephony software to link amateur radio systems.
+
+---
+
+## Compare to EchoLink and IRLP
+
+- **EchoLink** — PC/mobile app, simple to use, closed source
+- **IRLP** — Dedicated hardware, Linux-based, node-to-node
+- **AllstarLink** — Most flexible, open source, Asterisk-based
+- AllstarLink can link to EchoLink nodes
+
+Note:
+Compare the three main VoIP linking systems.
+Each has trade-offs in complexity vs. flexibility.
+
+---
+
 ## AllstarLink Network
 
 ![AllstarLink USA Node Map](assets/Allstar%20Map%20US.jpeg) <!-- .element: style="height: 450px; border: none; box-shadow: none;" -->
@@ -80,32 +106,6 @@ Each oval represents an individual node — repeaters, hotspots, and linking nod
 all connected into the central hub nodes 4334 and 3143.
 The tree structure illustrates how a hub aggregates many nodes into a single conference point.
 Highlighted nodes (pink/red) are typically sub-hubs or nodes with their own connections branching further.
-
----
-
-## History / Background
-
-- Created by Jim Dixon, W6JL
-- Built on the Asterisk open-source PBX
-- First released in the early 2000s
-- Now maintained by the AllstarLink community
-
-Note:
-Jim Dixon saw the potential of using VoIP and open-source
-telephony software to link amateur radio systems.
-
----
-
-## Compare to EchoLink and IRLP
-
-- **EchoLink** — PC/mobile app, simple to use, closed source
-- **IRLP** — Dedicated hardware, Linux-based, node-to-node
-- **AllstarLink** — Most flexible, open source, Asterisk-based
-- AllstarLink can link to EchoLink nodes
-
-Note:
-Compare the three main VoIP linking systems.
-Each has trade-offs in complexity vs. flexibility.
 
 ---
 
@@ -195,6 +195,20 @@ EmComm groups value AllstarLink for its resilience and ability to bridge otherwi
 
 ---
 
+## Hubs and Nets
+
+- Hubs are always-on conference nodes — equivalent to **Wires-X rooms/nodes**
+- Connect to a hub to talk with a group
+- Regional and special-interest nets meet on hub nodes
+- Examples: WIN System, HubNet, etc.
+
+Note:
+Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
+that multiple stations connect to for group communication.
+Hubs provide community gathering points for scheduled and informal nets.
+
+---
+
 ## Hardware — Server
 
 - Raspberry Pi (most common for hotspots)
@@ -244,6 +258,19 @@ HamVoip is an alternative with its own following.
 
 ---
 
+## DTMF Commands
+
+- Control your node from the radio keypad
+- Connect to a node: `*3node#`
+- Disconnect: `*1node#`
+- Status, link info, and more
+
+Note:
+DTMF commands are the primary way operators interact
+with AllstarLink from the radio side.
+
+---
+
 ## Linking to EchoLink
 
 <!-- .slide: style="font-size: 0.75em;" -->
@@ -276,19 +303,6 @@ interoperate with digital voice modes.
 
 ---
 
-## DTMF Commands
-
-- Control your node from the radio keypad
-- Connect to a node: `*3node#`
-- Disconnect: `*1node#`
-- Status, link info, and more
-
-Note:
-DTMF commands are the primary way operators interact
-with AllstarLink from the radio side.
-
----
-
 ## Monitoring
 
 - **allmon3** — Web-based node monitor and control panel
@@ -302,20 +316,6 @@ your AllstarLink node remotely.
 
 ---
 
-## Hubs and Nets
-
-- Hubs are always-on conference nodes — equivalent to **Wires-X rooms/nodes**
-- Connect to a hub to talk with a group
-- Regional and special-interest nets meet on hub nodes
-- Examples: WIN System, HubNet, etc.
-
-Note:
-Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
-that multiple stations connect to for group communication.
-Hubs provide community gathering points for scheduled and informal nets.
-
----
-
 ## Demo: Hotspot
 
 Note:
@@ -323,31 +323,95 @@ Live demo of connecting and using an AllstarLink hotspot.
 
 ---
 
-## AllstarLink Resources
+## Getting Started
 
-- [allstarlink.org](https://allstarlink.org/)
-- [AllstarLink Wiki](https://wiki.allstarlink.org/)
-- [Ham Radio Crusader](https://youtube.com/@HamRadioCrusader) (YouTube — setup guides)
-- [AllstarLink community on Discord](https://discord.gg/allstarlink)
-- [AllstarLink on groups.io](https://groups.io/g/Allstar)
+Three steps to get on AllstarLink:
+
+1. **Register** an account at [allstarlink.org](https://allstarlink.org/)
+2. **Add a server** — the computer that will run your node
+3. **Request a node number** — your address on the network
+
+Then install **ASL3** and configure with your node number and password.
 
 Note:
-Point people to these resources for getting started
-and setting up their own nodes.
+The barrier to entry is low — a Raspberry Pi, a USB interface, and a handheld radio
+is all you need for a basic hotspot node. The portal walks you through each step.
 
 ---
 
-## Hardware Resources
+## Step 1: Register an Account
 
-- [HotSpot Radios](https://hotspotradios.com/)
-- [AIOC — All-In-One Cable](https://github.com/skuep/AIOC)
-- [TOADS DI — Digital Interface](https://shop.hamradiodx.net/products/toads-digital-interface)
-- [SHARI Pi](https://kits4hams.com/shari)
-- [DigiRig](https://digirig.net/)
-- [AURSINC — AllStar Node Pi-hats](https://www.aursinc.com/collections/allstar-node)
+- Visit [allstarlink.org](https://allstarlink.org/) and click **Sign Up**
+- Provide contact info and upload a copy of your amateur radio license
+  - Accepted formats: JPG, PNG, WEBP, GIF, or PDF
+- You'll receive a confirmation email — **click the link to validate**
+  - Without validation your account request will not proceed
+- Wait for helpdesk approval
 
 Note:
-Hardware options for building an AllstarLink node.
+License upload is required — AllstarLink is an amateur radio service.
+The validation email step trips up a lot of new users, so worth emphasizing.
+
+---
+
+## Step 2: Register a Server
+
+- Log in to the Portal → **Server Settings**
+- Click **Proceed with Server Setup**
+- Fill in your server's location (including latitude and longitude)
+- Note the **IAX Port** setting (default: UDP 4569) — must be open on your firewall/router
+
+Note:
+The server in AllstarLink terms is the computer running ASL3 — your Raspberry Pi or other Linux box.
+IAX is the protocol used for node-to-node audio. UDP 4569 must be forwarded if you're behind NAT.
+
+---
+
+## Step 3: Request a Node Number
+
+- In the Portal → **Node Settings**, select your server
+- Your first node is **automatically approved**
+- You'll receive:
+  - Your **node number** (initially 5 digits)
+  - A **node password** — needed to configure ASL3
+
+Note:
+The node number and password go into your ASL3 configuration.
+Keep the password safe — it authenticates your node to the AllstarLink network.
+
+---
+
+## 6-Digit Node Numbers (NNX)
+
+- New users are encouraged to complete the **NNX process**
+- NNX extends your 5-digit number to 6 digits by appending a zero
+  - e.g. node `63001` becomes `630010`
+- Unlocks **9 additional node numbers** (`630011`–`630019`)
+- Allows up to 10 nodes under one account — useful for linking, hubs, EchoLink bridges, etc.
+
+Note:
+NNX stands for Node Number Extension. It's a one-time process done through the Portal.
+The extra nodes are handy even for a single operator — you might run a hotspot node,
+an EchoLink bridge node, and a hub node all from one server.
+
+---
+
+## Resources
+
+<!-- .slide: style="font-size: 0.8em;" -->
+
+**Software & Community**
+- [allstarlink.org](https://allstarlink.org/) — [AllstarLink Wiki](https://wiki.allstarlink.org/)
+- [Ham Radio Crusader](https://youtube.com/@HamRadioCrusader) (YouTube — setup guides)
+- [AllstarLink community on Discord](https://discord.gg/allstarlink) — [groups.io](https://groups.io/g/Allstar)
+
+**Hardware**
+- [HotSpot Radios](https://hotspotradios.com/) — [AURSINC — AllStar Node Pi-hats](https://www.aursinc.com/collections/allstar-node)
+- [AIOC — All-In-One Cable](https://github.com/skuep/AIOC) — [TOADS DI](https://shop.hamradiodx.net/products/toads-digital-interface)
+- [SHARI Pi](https://kits4hams.com/shari) — [DigiRig](https://digirig.net/)
+
+Note:
+Point people to these resources for getting started and setting up their own nodes.
 
 ---
 

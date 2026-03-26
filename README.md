@@ -9,43 +9,34 @@ A presentation about AllStar for amateur radio.
 ## Outline
 
 1. What is AllstarLink?
-   - AllstarLink Network (follow-up: US node map + stats link)
-   - A Hub Network: HubNet UK (node connection map for hubs 4334 & 3143)
 2. History / Background
 3. Compare to EchoLink and IRLP
-4. Architecture (Servers, Nodes, how they connect, simpleusb vs. usbradio)
+4. AllstarLink Network (US node map)
+5. A Hub Network: HubNet UK (node connection map)
+6. Architecture (Servers, Nodes, how they connect, simpleusb vs. usbradio)
    - simpleusb vs. usbradio (detail slide)
-5. Addressing (5 and 6 digit node numbers)
-6. Uses
-   - Access to a repeater
+7. Addressing (5 and 6 digit node numbers)
+8. Uses
    - Hotspot
    - Linking repeaters
    - Conference bridges / hubs (radioless nodes)
-   - Remote base
-   - Uses in Practice (follow-up: nets, remote access, EmComm, Skywarn, club, portable, monitoring)
-7. Hardware
-   = Server Hardware
-   - Sound Cards and interfaces
-      - DigiRig
-	  - TOADS
-	  - AIOC
-	  - ...
-   - Radios
-   - All-in-one and Sound Card combinations
-      - HotspotRadioUSB
-ca8. Software
-   - ASL3
-   - HamVoip
-9. Linking to EchoLink
-10. Digital Radio Integration
-    - AllStar is primarily analog FM
-    - DVSwitch (bridge to DMR, D-STAR, YSF, P25, NXDN)
-    - Other digital bridges
-11. DTMF Commands
-12. Monitoring
-    - allmon3
-    - supermon-ng
-13. Hubs and Nets (equivalent to Wires-X rooms/nodes)
-14. Demo a hotspot
-15. Resources (setup guides, Ham Radio Crusader, etc.)
-16. Questions / 73
+   - Remote base (including access to a remote repeater)
+   - Uses in Practice (nets, remote access, EmComm, Skywarn, club, portable, monitoring)
+9. Hubs and Nets (equivalent to Wires-X rooms/nodes)
+10. Hardware
+    - Server Hardware
+    - Sound Cards and Interfaces (DigiRig, TOADS, AIOC, URI, CM108)
+    - Radios and All-in-One (HotspotRadioUSB)
+11. Software (ASL3, HamVoip)
+12. DTMF Commands
+13. Linking to EchoLink (addressing: 3 + 6-digit zero-padded node number)
+14. Digital Radio Integration (DVSwitch: DMR, D-STAR, YSF, P25, NXDN)
+15. Monitoring (allmon3, supermon-ng)
+16. Demo a hotspot
+17. Getting Started (overview: account → server → node)
+    - Step 1: Register an Account (license upload, email validation)
+    - Step 2: Register a Server (location, IAX port UDP 4569)
+    - Step 3: Request a Node Number (auto-approved, get number + password)
+    - 6-Digit Node Numbers / NNX (extends 5-digit to 6-digit, unlocks 9 additional nodes)
+18. Resources (software/community + hardware, combined)
+19. Questions / 73
