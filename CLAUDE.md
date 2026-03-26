@@ -27,3 +27,7 @@ You can also open `index.html` directly in a browser, though speaker notes requi
 ## Slide Editing
 
 All slides live in `index.html` inside `<section>` elements within `<div class="slides">`. Add speaker notes with `<aside class="notes">` inside any section.
+
+## Keeping README.md and index.html in Sync
+
+`README.md` contains the authoritative presentation outline. Whenever you add, remove, rename, or reorder slides in `index.html`, you must also update the outline in `README.md` in the same response — and vice versa.
