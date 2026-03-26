@@ -9,17 +9,20 @@ A presentation about AllStar for amateur radio.
 ## Outline
 
 1. What is AllstarLink?
+   - AllstarLink Network (follow-up: US node map + stats link)
+   - A Hub Network: HubNet UK (node connection map for hubs 4334 & 3143)
 2. History / Background
 3. Compare to EchoLink and IRLP
-4. Architecture (Servers, Nodes, how they connect)
+4. Architecture (Servers, Nodes, how they connect, simpleusb vs. usbradio)
+   - simpleusb vs. usbradio (detail slide)
 5. Addressing (5 and 6 digit node numbers)
 6. Uses
    - Access to a repeater
    - Hotspot
    - Linking repeaters
-   - Conference bridges / hubs
+   - Conference bridges / hubs (radioless nodes)
    - Remote base
-   - Radioless nodes
+   - Uses in Practice (follow-up: nets, remote access, EmComm, Skywarn, club, portable, monitoring)
 7. Hardware
    = Server Hardware
    - Sound Cards and interfaces
@@ -42,7 +45,7 @@ ca8. Software
 12. Monitoring
     - allmon3
     - supermon-ng
-13. Hubs and Networks
+13. Hubs and Nets (equivalent to Wires-X rooms/nodes)
 14. Demo a hotspot
 15. Resources (setup guides, Ham Radio Crusader, etc.)
 16. Questions / 73

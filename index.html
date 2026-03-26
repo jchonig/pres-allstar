@@ -10,7 +10,7 @@
         .slide-logo {
             position: fixed;
             bottom: 1em;
-            right: 1em;
+            left: 1em;
             height: 50px;
             z-index: 100;
             opacity: 0.7;
@@ -42,13 +42,44 @@ a VoIP-based system for linking amateur radio repeaters and nodes.
 ## What is AllstarLink?
 
 - VoIP interconnect system for amateur radio
-- Based on Asterisk PBX software
+- Based on Asterisk PBX software with the **app_rpt** module
 - Links repeaters, hotspots, and nodes worldwide
 - Open source and free to use
+- Operates over standard internet — no special network required
+- Free node registration at allstarlink.org
 
 Note:
 AllstarLink uses the open-source Asterisk telephony engine
-adapted for amateur radio use.
+adapted for amateur radio use via the app_rpt module written by Jim Dixon W6JL.
+Anyone can register a node for free at allstarlink.org.
+
+---
+
+## AllstarLink Network
+
+![AllstarLink USA Node Map](assets/Allstar%20Map%20US.jpeg) <!-- .element: style="height: 450px; border: none; box-shadow: none;" -->
+
+US nodes shown — worldwide network at [stats.allstarlink.org](https://stats.allstarlink.org/)
+
+Note:
+The network has grown significantly since the early 2000s.
+The stats page at stats.allstarlink.org shows live connected nodes,
+with an interactive map of node locations across the US and internationally.
+
+---
+
+## A Hub Network: HubNet UK
+
+![HubNet UK node connection map](assets/networkMap%20_4334_3143_.jpeg) <!-- .element: style="height: 430px; border: none; box-shadow: none;" -->
+
+Nodes connected to the HubNet UK hub (nodes 4334 & 3143)
+
+Note:
+This is a real-time connection map of HubNet UK, a UK-based AllstarLink hub network.
+Each oval represents an individual node — repeaters, hotspots, and linking nodes —
+all connected into the central hub nodes 4334 and 3143.
+The tree structure illustrates how a hub aggregates many nodes into a single conference point.
+Highlighted nodes (pink/red) are typically sub-hubs or nodes with their own connections branching further.
 
 ---
 
@@ -84,9 +115,36 @@ Each has trade-offs in complexity vs. flexibility.
 - Nodes connect to radios via audio interfaces
 - Nodes register with the AllstarLink network
 - Audio transported over the internet as VoIP
+- Two channel drivers for USB interfaces: **simpleusb** and **usbradio**
 
 Note:
 Radio → Interface → Computer/Node → Internet → Node → Interface → Radio.
+The choice of channel driver (simpleusb vs. usbradio) depends on your radio's capabilities.
+
+---
+
+## simpleusb vs. usbradio
+
+<!-- .slide: style="font-size: 0.65em;" -->
+
+| | simpleusb | usbradio |
+|---|---|---|
+| **Signal detection** | Hardware COS/CTCSS pin | DSP in software |
+| **Squelch signal** | Required | Not required |
+| **Audio processing** | Minimal | Full DSP (de-emphasis, filtering) |
+| **CTCSS decode** | Hardware only | Software decode |
+| **CPU usage** | Low | Higher (DSP processing) |
+| **Best for** | Radios with COS output | Radios without squelch signal |
+
+- Use **usbradio** when your radio provides no squelch/COS signal — it detects audio activity in software via DSP
+- Use **simpleusb** for simpler setups where the radio provides a hardware squelch output
+- **usbradio** requires more CPU — consider this on low-power hardware like older Raspberry Pis
+
+Note:
+simpleusb relies on a hardware carrier/tone squelch signal from the radio to know when audio is present.
+usbradio uses software DSP to detect incoming audio, making it necessary for radios (like many HTs)
+that don't expose a COS or squelch output on their accessory connector.
+The DSP processing in usbradio has a higher CPU cost — worth noting for Raspberry Pi Zero or older Pi hardware.
 
 ---
 
@@ -104,28 +162,72 @@ Node numbers are how you identify and connect to other stations.
 
 ## Uses
 
-- Access to a remote repeater
 - Personal hotspot
 - Linking two or more repeaters
-- Conference bridges / hubs
-- Remote base station
+- Conference bridges / hubs (radioless nodes)
+- Remote base station (including access to a remote repeater)
 
 Note:
 AllstarLink is versatile — from a simple hotspot on your desk
 to linking repeater networks across states or countries.
+Conference bridges and hubs are radioless nodes — no radio required,
+just software routing audio between connected nodes.
 
 ---
 
-## Hardware
+## Uses in Practice
 
-- Raspberry Pi (or other Linux computer)
-- USB sound/radio interface (URI, modified CM108)
-- Radio (for hotspot or repeater connection)
-- Internet connection
+<!-- .slide: style="font-size: 0.75em;" -->
+
+- **Scheduled nets** — hundreds of recurring nets on AllstarLink hubs (e.g. [allstarnets.org](https://allstarnets.org/))
+- **Remote repeater access** — key into your home repeater from anywhere in the world
+- **Emergency communications** — ARES/RACES groups use AllstarLink for backup linking and interoperability
+- **Skywarn** — weather nets often coordinate via AllstarLink hubs
+- **Club coordination** — link club repeaters during events, contests, or public service
+- **Portable/travel operation** — connect a Pi hotspot from anywhere to your home repeater
+- **Monitoring/listening** — tune into nets and repeaters worldwide without transmitting
 
 Note:
-A basic node can run on a Raspberry Pi with a USB interface
-and an inexpensive radio.
+allstarnets.org maintains a directory of scheduled nets running on AllstarLink — a great resource
+to point new users to. Remote access is a killer feature: if you're traveling, a hotspot node
+lets you participate in your local repeater's nets from a hotel room anywhere in the world.
+EmComm groups value AllstarLink for its resilience and ability to bridge otherwise isolated repeaters.
+
+---
+
+## Hardware — Server
+
+- Raspberry Pi (most common for hotspots)
+- Any Linux-capable x86 computer
+- Low-power SBCs (Orange Pi, Rock Pi, etc.)
+- Internet connection required
+
+Note:
+Almost any Linux computer can run AllstarLink. Raspberry Pi is the
+most common choice for hotspots due to size, cost, and community support.
+
+---
+
+## Hardware — Sound Cards and Interfaces
+
+- **DigiRig** — Clean, purpose-built USB audio/PTT interface
+- **TOADS DI** — Digital interface for AllstarLink
+- **AIOC** — All-In-One Cable, integrates directly with radio
+- URI (USB Radio Interface) — legacy but still used
+- Modified CM108-based adapters
+
+---
+
+## Hardware — Radios and All-in-One
+
+- Any FM radio with accessory/speaker-mic connector
+- Mobile radios common for repeater/remote base use
+- HT (handheld) with cable for hotspot use
+- **All-in-one combos:** HotspotRadioUSB (radio + interface combined)
+
+Note:
+All-in-one solutions simplify the build — everything in one package.
+HotspotRadioUSB is a popular integrated option.
 
 ---
 
@@ -144,12 +246,20 @@ HamVoip is an alternative with its own following.
 
 ## Linking to EchoLink
 
-- AllstarLink nodes can connect to EchoLink
-- Bridges the two networks together
-- Expands reach to EchoLink users worldwide
+<!-- .slide: style="font-size: 0.75em;" -->
+
+- AllstarLink nodes can connect to EchoLink nodes
+- Bridges the two networks together — expands reach to EchoLink users worldwide
+- EchoLink node numbers are mapped into AllstarLink:
+  - Pad the EchoLink node number to 6 digits, then prefix with `3`
+  - EchoLink node `1234` → AllstarLink node `3001234`
+  - EchoLink node `123456` → AllstarLink node `3123456`
+- Connect via normal DTMF: `*3` followed by the 7-digit translated number
 
 Note:
-This interoperability is a big advantage of AllstarLink.
+The "3" prefix reserves a dedicated namespace in AllstarLink for EchoLink nodes.
+Zero-pad the EchoLink number to 6 digits first, then prepend the 3 for a 7-digit AllstarLink node number.
+Reference: https://allstarlink.github.io/adv-topics/echolink/
 
 ---
 
@@ -192,15 +302,17 @@ your AllstarLink node remotely.
 
 ---
 
-## Hubs and Networks
+## Hubs and Nets
 
-- Hubs are always-on conference nodes
+- Hubs are always-on conference nodes — equivalent to **Wires-X rooms/nodes**
 - Connect to a hub to talk with a group
-- Regional and special-interest networks
+- Regional and special-interest nets meet on hub nodes
 - Examples: WIN System, HubNet, etc.
 
 Note:
-Hubs provide community gathering points on AllstarLink.
+Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
+that multiple stations connect to for group communication.
+Hubs provide community gathering points for scheduled and informal nets.
 
 ---
 
@@ -232,6 +344,7 @@ and setting up their own nodes.
 - [TOADS DI — Digital Interface](https://shop.hamradiodx.net/products/toads-digital-interface)
 - [SHARI Pi](https://kits4hams.com/shari)
 - [DigiRig](https://digirig.net/)
+- [AURSINC — AllStar Node Pi-hats](https://www.aursinc.com/collections/allstar-node)
 
 Note:
 Hardware options for building an AllstarLink node.
