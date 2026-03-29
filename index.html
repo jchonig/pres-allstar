@@ -94,6 +94,65 @@ with an interactive map of node locations across the US and internationally.
 
 ---
 
+## Uses
+
+- Personal hotspot
+- Linking two or more repeaters
+- Conference bridges / hubs (radioless nodes)
+- Remote base station (including access to a remote repeater)
+
+Note:
+AllstarLink is versatile — from a simple hotspot on your desk
+to linking repeater networks across states or countries.
+Conference bridges and hubs are radioless nodes — no radio required,
+just software routing audio between connected nodes.
+
+---
+
+## Node Types
+
+![Four types of AllstarLink nodes](assets/Nodes.png) <!-- .element: style="height: 480px; border: none; box-shadow: none;" -->
+
+Note:
+Four node types: Hotspot Node (HTs via internet), Radio Node (remote repeater access),
+Repeater Node (full repeater system), and Conference Bridge (virtual hub, radioless).
+
+---
+
+## Uses in Practice
+
+<!-- .slide: style="font-size: 0.75em;" -->
+
+- **Scheduled nets** — hundreds of recurring nets on AllstarLink hubs (e.g. [allstarnets.org](https://allstarnets.org/))
+- **Remote repeater access** — key into your home repeater from anywhere in the world
+- **Emergency communications** — ARES/RACES groups use AllstarLink for backup linking and interoperability
+- **Skywarn** — weather nets often coordinate via AllstarLink hubs
+- **Club coordination** — link club repeaters during events, contests, or public service
+- **Portable/travel operation** — connect a Pi hotspot from anywhere to your home repeater
+- **Monitoring/listening** — tune into nets and repeaters worldwide without transmitting
+
+Note:
+allstarnets.org maintains a directory of scheduled nets running on AllstarLink — a great resource
+to point new users to. Remote access is a killer feature: if you're traveling, a hotspot node
+lets you participate in your local repeater's nets from a hotel room anywhere in the world.
+EmComm groups value AllstarLink for its resilience and ability to bridge otherwise isolated repeaters.
+
+---
+
+## Hubs and Nets
+
+- Hubs are always-on conference nodes — equivalent to **Wires-X rooms/nodes**
+- Connect to a hub to talk with a group
+- Regional and special-interest nets meet on hub nodes
+- Examples: WIN System, HubNet, etc.
+
+Note:
+Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
+that multiple stations connect to for group communication.
+Hubs provide community gathering points for scheduled and informal nets.
+
+---
+
 ## A Hub Network: HubNet UK
 
 ![HubNet UK node connection map](assets/networkMap%20_4334_3143_.jpeg) <!-- .element: style="height: 430px; border: none; box-shadow: none;" -->
@@ -160,61 +219,12 @@ Node numbers are how you identify and connect to other stations.
 
 ---
 
-## Uses
-
-- Personal hotspot
-- Linking two or more repeaters
-- Conference bridges / hubs (radioless nodes)
-- Remote base station (including access to a remote repeater)
-
-Note:
-AllstarLink is versatile — from a simple hotspot on your desk
-to linking repeater networks across states or countries.
-Conference bridges and hubs are radioless nodes — no radio required,
-just software routing audio between connected nodes.
-
----
-
-## Uses in Practice
-
-<!-- .slide: style="font-size: 0.75em;" -->
-
-- **Scheduled nets** — hundreds of recurring nets on AllstarLink hubs (e.g. [allstarnets.org](https://allstarnets.org/))
-- **Remote repeater access** — key into your home repeater from anywhere in the world
-- **Emergency communications** — ARES/RACES groups use AllstarLink for backup linking and interoperability
-- **Skywarn** — weather nets often coordinate via AllstarLink hubs
-- **Club coordination** — link club repeaters during events, contests, or public service
-- **Portable/travel operation** — connect a Pi hotspot from anywhere to your home repeater
-- **Monitoring/listening** — tune into nets and repeaters worldwide without transmitting
-
-Note:
-allstarnets.org maintains a directory of scheduled nets running on AllstarLink — a great resource
-to point new users to. Remote access is a killer feature: if you're traveling, a hotspot node
-lets you participate in your local repeater's nets from a hotel room anywhere in the world.
-EmComm groups value AllstarLink for its resilience and ability to bridge otherwise isolated repeaters.
-
----
-
-## Hubs and Nets
-
-- Hubs are always-on conference nodes — equivalent to **Wires-X rooms/nodes**
-- Connect to a hub to talk with a group
-- Regional and special-interest nets meet on hub nodes
-- Examples: WIN System, HubNet, etc.
-
-Note:
-Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
-that multiple stations connect to for group communication.
-Hubs provide community gathering points for scheduled and informal nets.
-
----
-
 ## Hardware — Server
 
 - Raspberry Pi (most common for hotspots)
 - Any Linux-capable x86 computer
 - Low-power SBCs (Orange Pi, Rock Pi, etc.)
-- Internet connection required
+- Internet connection required (except for a repeater)
 
 Note:
 Almost any Linux computer can run AllstarLink. Raspberry Pi is the
@@ -255,6 +265,97 @@ HotspotRadioUSB is a popular integrated option.
 Note:
 Two main software options. ASL3 is the current community standard.
 HamVoip is an alternative with its own following.
+
+---
+
+## Setting Up AllstarLink
+
+1. **Sign up** at [allstarlink.org/register](https://allstarlink.org/register/index.php)
+2. **Wait for approval** — license is verified by the helpdesk
+3. **Log in** and complete account settings
+4. **Request 6-digit node numbers** via Node Management (NNX)
+5. **Add a server** — the computer running ASL3
+6. **Add a node** — your radio interface on that server
+
+Note:
+Walk through each step in the portal. Steps 5 and 6 must be done in order —
+you need a server before you can add a node to it.
+
+---
+
+## Login: Account Settings
+
+![AllstarLink Account Settings](assets/Portal_Account_settings.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+
+Note:
+After logging in, verify your account settings — callsign, email, and contact info.
+Your PIN is auto-generated and used for phone access.
+
+---
+
+## Add a Server: Server List
+
+![AllstarLink Servers list](assets/Portal_Servers.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+
+Note:
+The Servers page lists all servers under your account. Click "Add New Server" to create one.
+A server is the AllstarLink name for the computer running Asterisk + app_rpt.
+
+---
+
+## Add a Server: Server Settings
+
+![AllstarLink Server Settings](assets/Portal_Server.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+
+Note:
+Fill in server name, location, and latitude/longitude. IAX port defaults to 4569 UDP —
+must be open on your firewall. Proxy IP is rarely needed.
+
+---
+
+## Add a Node: Node List
+
+![AllstarLink Nodes list](assets/Portal_Nodes.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+
+Note:
+The Nodes page shows all registered nodes. NNX nodes (6-digit) are shown with the NNX column marked Yes.
+Click a node number to edit it. Use Node Management to request new numbers or extend to 6 digits.
+
+---
+
+## Add a Node: Node Settings
+
+![AllstarLink Node Settings](assets/Portal_Node.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+
+Note:
+Node settings include the password (used in ASL3 config), callsign, frequency, CTCSS tone,
+and which server the node belongs to. Most options like reverse autopatch can be left as No.
+
+---
+
+## Installing ASL3
+
+- **ASL3** is the current AllstarLink software distribution
+- Runs on Raspberry Pi or any Debian-based Linux system
+- Install guide: [Raspberry Pi Appliance (Detailed)](https://allstarlink.github.io/install/pi-appliance/pi-detailed/#software-updates)
+
+Note:
+The Pi appliance install uses Raspberry Pi Imager with a custom AllstarLink repository URL.
+Walk people to the wiki for step-by-step instructions.
+
+---
+
+## Node Configuration
+
+- After installation, run `sudo asl-menu` to configure your node
+- Set node number, password, and audio interface
+- YouTuber Freddie Mac has a nice ASL3 installation and configuration video:
+  [https://youtu.be/aeuj-yI8qrU](https://youtu.be/aeuj-yI8qrU)
+- Also see [ASL3 Menu](https://allstarlink.github.io/config/asl-menu/) for details
+
+Note:
+asl-menu is the primary post-install configuration tool.
+Freddie Mac's video is a well-regarded walkthrough of the full ASL3 setup process.
 
 ---
 
