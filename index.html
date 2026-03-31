@@ -354,23 +354,36 @@ Browse to `https://nodeNNNNNN.local` after first boot
 
 Note:
 The ASL3 appliance hosts a local web interface accessible via mDNS at nodeNNNNNN.local.
-From here you can access the Web Admin Portal (Cockpit), manage Node Links, and reach the ASL Manual.
+From here you can access the Web Admin Portal, manage Node Links, and reach the ASL Manual.
 
 ---
 
-## Web Admin Portal (Cockpit)
+## Web Admin Portal
 
-![AllStarLink Cockpit login screen](assets/Allstar-Cockpit-Login.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
+- Browser-based administration of your AllstarLink server
+- Based on **[Cockpit](https://cockpit-project.org/)** — an open-source Linux server manager
+- Access at `https://nodeNNNNNN.local/admin`
+- Manage system, networking, storage, services, and terminal
+- Also provides software updates and log viewing
+
+Note:
+Cockpit is a widely-used open-source web console for Linux servers.
+ASL3 builds on it to provide a fully integrated management interface for AllstarLink nodes.
+
+---
+
+## Web Admin Portal: Login
+
+![AllStarLink Web Admin Portal login screen](assets/Allstar-Cockpit-Login.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
 
 Use the credentials you set when creating the SD card image
 
 Note:
-Cockpit is the web-based system manager for ASL3. Log in with the username and password
-configured during the Pi Imager step — there are no default credentials.
+Log in with the username and password configured during the Pi Imager step — there are no default credentials.
 
 ---
 
-## Cockpit: Enable Administrative Access
+## Web Admin Portal: Enable Administrative Access
 
 <div style="display: flex; gap: 1em; align-items: flex-start; justify-content: center;">
 <div style="text-align: center;">
@@ -386,27 +399,27 @@ configured during the Pi Imager step — there are no default credentials.
 Click **"Turn on Administrative Access"** to unlock full management
 
 Note:
-On first login Cockpit runs in limited access mode — shown by the yellow banner.
+On first login the Web Admin Portal runs in limited access mode — shown by the yellow banner.
 Click "Turn on Administrative Access" and re-enter your password to gain full control.
 The second screen confirms administrative access is now enabled.
 
 ---
 
-## Cockpit: Terminal
+## Web Admin Portal: Terminal
 
-![Cockpit Terminal](assets/Allstar-Cockpit-Terminal.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
+![Web Admin Portal Terminal](assets/Allstar-Cockpit-Terminal.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
 
 Click **Terminal** in the left sidebar to access a browser-based shell
 
 Note:
-The Cockpit terminal gives you full command-line access to the Pi directly from your browser —
+The terminal gives you full command-line access to the Pi directly from your browser —
 no SSH client needed. This is where you'll run sudo asl-menu to configure your node.
 
 ---
 
-## Setting Up Allmon3 Credentials
-
 <!-- .slide: style="font-size: 0.75em;" -->
+
+## Setting Up Allmon3 Credentials
 
 Allmon3 requires its own login — create users with:
 
@@ -430,7 +443,7 @@ sudo systemctl restart allmon3
 - See Allmon3 at `https://nodeNNNNNN.local/allmon3`
 
 Note:
-Allmon3 uses its own separate credential store — distinct from the Cockpit/system login.
+Allmon3 uses its own separate credential store — distinct from the Web Admin Portal login.
 You must create at least one user before the Allmon3 interface will allow login.
 
 ---
