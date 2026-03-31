@@ -36,7 +36,11 @@ A presentation about AllStar for amateur radio.
     - Add a Node: Node List (Portal_Nodes.png)
     - Add a Node: Node Settings (Portal_Node.png)
 14. Installing ASL3 (link to Pi appliance detailed install guide)
-15. Node Configuration (asl-menu, Freddie Mac YouTube video, ASL3 Menu docs)
+15. Connecting to Your Node (nodeNNNNNN.local, Allstar-Web-main.png)
+16. Web Admin Portal / Cockpit login (Allstar-Cockpit-Login.png, use image credentials)
+17. Cockpit: Enable Administrative Access (Allstar-Cockpit-Limited.png + Allstar-Cockpit-Access.png, click "Turn on Administrative Access")
+18. Cockpit: Terminal (Allstar-Cockpit-Terminal.png, click Terminal in sidebar)
+19. Node Configuration (asl-menu, Freddie Mac YouTube video, ASL3 Menu docs)
 16. DTMF Commands
 14. Linking to EchoLink (addressing: 3 + 6-digit zero-padded node number)
 15. Digital Radio Integration (DVSwitch: DMR, D-STAR, YSF, P25, NXDN)

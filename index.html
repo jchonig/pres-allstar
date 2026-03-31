@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repeaters, Hotspots and Nodes, Oh My!</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css">
     <style>
@@ -342,6 +343,64 @@ and which server the node belongs to. Most options like reverse autopatch can be
 Note:
 The Pi appliance install uses Raspberry Pi Imager with a custom AllstarLink repository URL.
 Walk people to the wiki for step-by-step instructions.
+
+---
+
+## Connecting to Your Node
+
+Browse to `https://nodeNNNNNN.local` after first boot
+
+![AllStarLink 3 web interface](assets/Allstar-Web-main.png) <!-- .element: style="height: 420px; border: none; box-shadow: none;" -->
+
+Note:
+The ASL3 appliance hosts a local web interface accessible via mDNS at nodeNNNNNN.local.
+From here you can access the Web Admin Portal (Cockpit), manage Node Links, and reach the ASL Manual.
+
+---
+
+## Web Admin Portal (Cockpit)
+
+![AllStarLink Cockpit login screen](assets/Allstar-Cockpit-Login.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
+
+Use the credentials you set when creating the SD card image
+
+Note:
+Cockpit is the web-based system manager for ASL3. Log in with the username and password
+configured during the Pi Imager step — there are no default credentials.
+
+---
+
+## Cockpit: Enable Administrative Access
+
+<div style="display: flex; gap: 1em; align-items: flex-start; justify-content: center;">
+<div style="text-align: center;">
+<img src="assets/Allstar-Cockpit-Limited.png" style="height: 270px; border: none; box-shadow: none;">
+<p style="font-size: 0.6em; margin-top: 0.3em;">Initial — limited access mode</p>
+</div>
+<div style="text-align: center;">
+<img src="assets/Allstar-Cockpit-Access.png" style="height: 270px; border: none; box-shadow: none;">
+<p style="font-size: 0.6em; margin-top: 0.3em;">After enabling administrative access</p>
+</div>
+</div>
+
+Click **"Turn on Administrative Access"** to unlock full management
+
+Note:
+On first login Cockpit runs in limited access mode — shown by the yellow banner.
+Click "Turn on Administrative Access" and re-enter your password to gain full control.
+The second screen confirms administrative access is now enabled.
+
+---
+
+## Cockpit: Terminal
+
+![Cockpit Terminal](assets/Allstar-Cockpit-Terminal.png) <!-- .element: style="height: 380px; border: none; box-shadow: none;" -->
+
+Click **Terminal** in the left sidebar to access a browser-based shell
+
+Note:
+The Cockpit terminal gives you full command-line access to the Pi directly from your browser —
+no SSH client needed. This is where you'll run sudo asl-menu to configure your node.
 
 ---
 
