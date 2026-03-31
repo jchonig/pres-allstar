@@ -404,6 +404,37 @@ no SSH client needed. This is where you'll run sudo asl-menu to configure your n
 
 ---
 
+## Setting Up Allmon3 Credentials
+
+<!-- .slide: style="font-size: 0.75em;" -->
+
+Allmon3 requires its own login — create users with:
+
+```bash
+sudo allmon3-passwd <username>
+```
+
+To remove a user:
+
+```bash
+sudo allmon3-passwd -d <username>
+```
+
+- Run once per user you want to grant access to the Allmon3 web interface
+- Then restart Allmon3 for credentials to take effect:
+
+```bash
+sudo systemctl restart allmon3
+```
+
+- See Allmon3 at `https://nodeNNNNNN.local/allmon3`
+
+Note:
+Allmon3 uses its own separate credential store — distinct from the Cockpit/system login.
+You must create at least one user before the Allmon3 interface will allow login.
+
+---
+
 ## Node Configuration
 
 - After installation, run `sudo asl-menu` to configure your node

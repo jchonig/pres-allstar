@@ -40,7 +40,8 @@ A presentation about AllStar for amateur radio.
 16. Web Admin Portal / Cockpit login (Allstar-Cockpit-Login.png, use image credentials)
 17. Cockpit: Enable Administrative Access (Allstar-Cockpit-Limited.png + Allstar-Cockpit-Access.png, click "Turn on Administrative Access")
 18. Cockpit: Terminal (Allstar-Cockpit-Terminal.png, click Terminal in sidebar)
-19. Node Configuration (asl-menu, Freddie Mac YouTube video, ASL3 Menu docs)
+19. Setting Up Allmon3 Credentials (sudo allmon3-passwd)
+20. Node Configuration (asl-menu, Freddie Mac YouTube video, ASL3 Menu docs)
 16. DTMF Commands
 14. Linking to EchoLink (addressing: 3 + 6-digit zero-padded node number)
 15. Digital Radio Integration (DVSwitch: DMR, D-STAR, YSF, P25, NXDN)
