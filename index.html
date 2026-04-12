@@ -222,6 +222,21 @@ Node numbers are how you identify and connect to other stations.
 
 ---
 
+## 6-Digit Node Numbers (NNX)
+
+- New users are encouraged to complete the **NNX process**
+- NNX extends your 5-digit number to 6 digits by appending a zero
+  - e.g. node `63001` becomes `630010`
+- Unlocks **9 additional node numbers** (`630011`–`630019`)
+- Allows up to 10 nodes under one account — useful for linking, hubs, EchoLink bridges, etc.
+
+Note:
+NNX stands for Node Number Extension. It's a one-time process done through the Portal.
+The extra nodes are handy even for a single operator — you might run a hotspot node,
+an EchoLink bridge node, and a hub node all from one server.
+
+---
+
 ## Hardware — Server
 
 - Raspberry Pi (most common for hotspots)
@@ -526,79 +541,6 @@ your AllstarLink node remotely.
 
 Note:
 Live demo of connecting and using an AllstarLink hotspot.
-
----
-
-## Getting Started
-
-Three steps to get on AllstarLink:
-
-1. **Register** an account at [allstarlink.org](https://allstarlink.org/)
-2. **Add a server** — the computer that will run your node
-3. **Request a node number** — your address on the network
-
-Then install **ASL3** and configure with your node number and password.
-
-Note:
-The barrier to entry is low — a Raspberry Pi, a USB interface, and a handheld radio
-is all you need for a basic hotspot node. The portal walks you through each step.
-
----
-
-## Step 1: Register an Account
-
-- Visit [allstarlink.org](https://allstarlink.org/) and click **Sign Up**
-- Provide contact info and upload a copy of your amateur radio license
-  - Accepted formats: JPG, PNG, WEBP, GIF, or PDF
-- You'll receive a confirmation email — **click the link to validate**
-  - Without validation your account request will not proceed
-- Wait for helpdesk approval
-
-Note:
-License upload is required — AllstarLink is an amateur radio service.
-The validation email step trips up a lot of new users, so worth emphasizing.
-
----
-
-## Step 2: Register a Server
-
-- Log in to the Portal → **Server Settings**
-- Click **Proceed with Server Setup**
-- Fill in your server's location (including latitude and longitude)
-- Note the **IAX Port** setting (default: UDP 4569) — must be open on your firewall/router
-
-Note:
-The server in AllstarLink terms is the computer running ASL3 — your Raspberry Pi or other Linux box.
-IAX is the protocol used for node-to-node audio. UDP 4569 must be forwarded if you're behind NAT.
-
----
-
-## Step 3: Request a Node Number
-
-- In the Portal → **Node Settings**, select your server
-- Your first node is **automatically approved**
-- You'll receive:
-  - Your **node number** (initially 5 digits)
-  - A **node password** — needed to configure ASL3
-
-Note:
-The node number and password go into your ASL3 configuration.
-Keep the password safe — it authenticates your node to the AllstarLink network.
-
----
-
-## 6-Digit Node Numbers (NNX)
-
-- New users are encouraged to complete the **NNX process**
-- NNX extends your 5-digit number to 6 digits by appending a zero
-  - e.g. node `63001` becomes `630010`
-- Unlocks **9 additional node numbers** (`630011`–`630019`)
-- Allows up to 10 nodes under one account — useful for linking, hubs, EchoLink bridges, etc.
-
-Note:
-NNX stands for Node Number Extension. It's a one-time process done through the Portal.
-The extra nodes are handy even for a single operator — you might run a hotspot node,
-an EchoLink bridge node, and a hub node all from one server.
 
 ---
 
