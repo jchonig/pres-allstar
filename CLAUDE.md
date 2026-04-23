@@ -14,12 +14,12 @@ python3 -m http.server 8000
 ```
 Then visit `http://localhost:8000`.
 
-You can also open `index.html` directly in a browser, though speaker notes require serving over HTTP.
+You can also open `index.html` directly in a browser — speaker notes work with direct file access in Zen browser.
 
 ## Reveal.js Keyboard Shortcuts
 
 - Arrow keys / Space — Navigate slides
-- `S` — Open speaker notes window
+- `s` — Open speaker notes window
 - `F` — Fullscreen
 - `O` / `Esc` — Slide overview
 - `B` / `.` — Pause (black screen)
@@ -27,3 +27,7 @@ You can also open `index.html` directly in a browser, though speaker notes requi
 ## Slide Editing
 
 All slides live in `index.html` inside `<section>` elements within `<div class="slides">`. Add speaker notes with `<aside class="notes">` inside any section.
+
+## Keeping README.md and index.html in Sync
+
+`README.md` contains the authoritative presentation outline. Whenever you add, remove, rename, or reorder slides in `index.html`, you must also update the outline in `README.md` in the same response — and vice versa.
