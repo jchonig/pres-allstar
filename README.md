@@ -48,10 +48,13 @@ A presentation about AllStar for amateur radio.
 15. Digital Radio Integration (DVSwitch: DMR, D-STAR, YSF, P25, NXDN)
 16. Monitoring (allmon3, supermon-ng)
 17. Demo a hotspot
-18. Getting Started (overview: account → server → node)
+18. Radioless Node (AllScan UCI80M + Motorola M1 speaker-mic + RPi; M1 vs K1 audio quality; link to Random Wire #180)
+19. Etiquette (listen before connecting, ID yourself, disconnect cleanly, etc.; link to Ham Radio Crusader Ep. 1)
+20. Other Projects — Ampersand (KC1FSZ): Asterisk-free AllStar linking, HD audio, browser config, GPL)
+21. Getting Started (overview: account → server → node)
     - Step 1: Register an Account (license upload, email validation)
     - Step 2: Register a Server (location, IAX port UDP 4569)
     - Step 3: Request a Node Number (auto-approved, get number + password)
     - 6-Digit Node Numbers / NNX (extends 5-digit to 6-digit, unlocks 9 additional nodes)
-19. Resources (software/community + hardware, combined)
-20. Questions / 73
+22. Resources (software/community + hardware, combined)
+23. Questions / 73
