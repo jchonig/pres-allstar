@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting up a Hotspot</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css">
+    <style>
+        .slide-logo {
+            position: fixed;
+            bottom: 1em;
+            left: 1em;
+            height: 50px;
+            z-index: 100;
+            opacity: 0.7;
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #4aad5a;
+        }
+        body, .reveal .backgrounds {
+            background-color: #2a2a2a;
+        }
+        body::after {
+            content: "DRAFT";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 10em;
+            font-weight: bold;
+            color: rgba(255, 0, 0, 0.15);
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <img class="slide-logo" src="https://n2vlv.net/images/n2vlv.png" alt="N2VLV">
+        <div class="slides">
+
+            <section data-markdown>
+                <textarea data-template>
+# Setting up a Hotspot
+### *Draft*
+
+Jeffrey Honig — N2VLV
+
+[n2vlv.net](https://n2vlv.net/) — [n2vlv@honig.net](mailto:n2vlv@honig.net)
+
+[Allstar Presentation](index.html)
+
+Note:
+Today we'll focus on hotspots — personal AllStar nodes that let you
+connect your HT or mobile radio to the worldwide AllStar network.
+
+---
+
+## What is an AllStar Hotspot?
+
+- A small, low-power FM radio linked to the AllStar network via the internet
+- Lets you use a handheld or mobile radio to reach nodes worldwide
+- Typically UHF (70 cm) or VHF (2 m), 100–500 mW output
+- Sits on your desk, in your shack, or travels with you
+- Registers as a standard AllStar node — just smaller
+
+Note:
+A hotspot is really just a miniature repeater that doesn't repeat —
+it bridges your local RF signal to the internet.
+Your HT keys up the hotspot, and its audio travels over the internet
+to whatever AllStar node or hub you're connected to.
+No wide-area coverage needed; you're typically talking to it from the same room.
+
+---
+
+## Pre-Assembled Hotspots
+
+- Ready to use out of the box
+- Pre-configured with ASL3 software
+- You supply your node number and credentials
+- Great if you don't want to build
+
+Note:
+Several vendors sell fully assembled hotspots.
+Most ship pre-configured — you just plug them in, enter your node number,
+and they're on the air.
+
+---
+
+## SHARI PiZero
+
+[kits4hams.com/shari-pizero](https://kits4hams.com/shari-pizero) — **$205** assembled
+
+- Raspberry Pi Zero 2W + NiceRF SA818 radio module
+- UHF (420–450 MHz) or VHF (144–148 MHz)
+- CMedia CM108B USB audio IC
+- LTCC low-pass filter for FCC Part 97 compliance
+- Hammond aluminum enclosure (~3.25 × 2.25 × 1")
+- 250–500 mW RF output
+- Also available as a kit ($100) or parts-only
+
+Note:
+The SHARI PiZero is one of the most popular hotspot kits.
+SHARI stands for SA818 Ham Allstar Radio Interface, designed by N8AR.
+The fully assembled version includes the Pi Zero 2W and power supply.
+Add $9 for US shipping. Also available in a kit form for the builder.
+
+---
+
+## HotSpotRadio
+
+[hotspotradios.com/hotspotradio](https://hotspotradios.com/hotspotradio) — **$298 + $18 shipping**
+
+- Raspberry Pi 3B with custom PiHat
+- NiceRF SA818 UHF radio module, 100–400 mW
+- CMedia CM119B USB audio interface
+- Arrives pre-configured — no audio adjustment needed
+- PTT, COR, and Heartbeat status LEDs
+- C4LABS case, 5.1V/2.5A power supply, and antenna included
+
+Note:
+The HotSpotRadio ships with your node number, frequency, and CTCSS
+already programmed — truly plug-and-play.
+Uses the SA818 UHF module on a custom Pi hat.
+The 6-second power button provides a safe shutdown.
+
+---
+
+## ClearNode
+
+[node-ventures.com/buy-clearnode](https://www.node-ventures.com/buy-clearnode/) — **$495**
+
+- Raspberry Pi-based with integrated UHF or VHF transceiver
+- AllStar, EchoLink, and digital modes (DMR, P25, YSF, NXDN)
+- **Mobile app** (iOS and Android) for remote control and configuration
+- WiFi setup without SSH or terminal
+- Requires a valid amateur radio license to purchase
+
+Note:
+The ClearNode stands out for its mobile app — you can configure and control
+the node entirely from your phone without touching a command line.
+It supports digital modes via DVSwitch in addition to standard AllStar.
+Also supports audio streaming to mobile (~20-second delay) and timed event automation.
+Higher price point reflects the polished software ecosystem.
+
+---
+
+## Micro-Node Nano-AE-M1
+
+[micro-node.com/nano-ae-m1.shtml](http://www.micro-node.com/nano-ae-m1.shtml) — **$495+**
+
+- Standalone self-contained hotspot with built-in LCD touchscreen
+- Integrated 420–450 MHz, 200 mW UHF radio
+- Menu-based UI — no Linux knowledge required
+- One of the original AllStar personal hotspots
+- Configure and operate entirely through the touchscreen
+
+Note:
+The Micro-Node Nano-AE-M1 is notable for its LCD touchscreen interface —
+you don't need SSH or a web browser to connect to nodes.
+It's one of the oldest commercial AllStar hotspot products.
+Check the store at micro-node.com/store/ for current pricing.
+
+---
+
+## AllScan Complete Nodes
+
+[allscan.info/products](https://allscan.info/products/) — **$229 and up**
+
+All pre-configured with ASL3, AllScan, and Allmon3:
+
+| Model | Description | Price |
+|-------|-------------|-------|
+| ANH85 | Half-duplex: MiniPC + URI + 1 HT | $229 |
+| ANR80 | Radio-less: Raspberry Pi 5 + UCI80 | $269 |
+| ANF101 | Full-duplex: MiniPC + URI + 2 HTs | $299 |
+
+- Radio-less nodes use a speaker-mic or headset — no RF transmitted
+- Several additional models available on their website
+
+Note:
+AllScan is best known as a web-based node monitoring tool,
+but they also sell complete nodes.
+Radio nodes use Retevis RT85 handhelds connected to a URI (USB Radio Interface).
+The Dell Wyse 3040 MiniPC is a compact fanless PC well-suited for always-on nodes.
+Other models include ANH100, ANR100 ($259), ANR150 ($279), and ANR100-LT ($269 + laptop).
+All nodes ship fully configured and ready to register.
+
+---
+
+## Building a Hotspot
+
+- Use a Raspberry Pi Zero 2W, Pi 3B+, or Pi 4
+- Add a radio interface board or USB radio module
+- Install ASL3 (AllStarLink 3) — the official software
+- Register your node at [allstarlink.org](https://allstarlink.org)
+
+Note:
+Building your own hotspot gives you more flexibility and lower cost.
+The Pi Zero 2W is the most compact and lowest-power option.
+The Pi 3B+ and Pi 4 give you more headroom for monitoring tools
+like Allmon3 and AllScan.
+
+---
+
+## Radio Interfaces
+
+<!-- .slide: style="font-size: 0.75em;" -->
+
+| Interface | Form | Price |
+|-----------|------|-------|
+| [HotSpotRadio-USB](https://hotspotradios.com/hotspotradio-usb) | USB dongle | $98 + shipping |
+| [SHARI PiXX](https://kits4hams.com/shari) | Pi3/Pi4 USB module | $80 kit / $105 assembled |
+| [SHARI PiHat](https://kits4hams.com/shari-pihat) | Pi4 HAT in metal case | $235+ assembled |
+| [SHARI PiZero](https://kits4hams.com/shari-pizero) | Pi Zero 2W module | $100 kit / $205 assembled |
+| [AURSINC Pi Hat](https://www.aursinc.com/products/aursinc-allstar-rf-node-uhf-sr-frs-radio-programming-module-pi-hat-for-allstar-echolink-aprs-digital-modes-compatible-for-raspberry-pi-2-3-4-pin-to-pin-replace-sa-818-module-uhf-freq-400-470) | Pi HAT (SA-818 compatible) | ~$69 |
+
+All use UHF or VHF FM — 100–500 mW output
+
+Note:
+The HotSpotRadio-USB is unique — it's a self-contained USB stick with a radio built in,
+so it works with any computer or Pi running ASL3.
+The SHARI family (designed by N8AR) are the most popular Pi-native interfaces
+and come in kit or assembled forms.
+The AURSINC board is an SA-818 pin-compatible alternative available on Amazon.
+
+---
+
+## Storage: High-Endurance SD Card
+
+- Standard SD cards wear out quickly with OS logging
+- Use a **high-endurance** microSD card rated for continuous write cycles
+- Recommended: Samsung PRO Endurance or SanDisk High Endurance
+- 32 GB is sufficient for ASL3
+
+Note:
+AllStar nodes write logs continuously — a normal SD card can fail in months.
+High-endurance cards are designed for dashcams and security cameras
+with similar always-on write patterns.
+This is a cheap insurance policy against losing your node configuration.
+
+---
+
+## Building a Node
+
+*(Coming soon)*
+
+- Install ASL3 using the Pi Appliance image
+- Register your node at allstarlink.org
+- Configure via the web admin portal (Cockpit)
+- Set frequency, CTCSS, and audio levels with asl-menu
+
+Note:
+Detailed build instructions will be added here.
+The AllStar Pi Appliance image makes installation straightforward —
+flash the SD card, boot, and follow the web setup wizard.
+
+---
+
+## Softphones
+
+Connect to AllStar without a radio
+
+- **RepeaterPhone** (iOS) — [repeaterphone.com](https://repeaterphone.com/)
+- **Tranceive** (macOS) — connects directly to your node
+- **Android** — no mature option yet; **QSO One** ([qso1.net](https://qso1.net/)) is coming
+- **Windows** — **QSO One** is also coming for Windows
+
+Note:
+Softphones connect to your AllStar node over the internet
+and let you use it like a walkie-talkie from your phone or computer.
+RepeaterPhone is the most polished option on iOS.
+Tranceive is a clean native macOS app.
+Android and Windows users are waiting on QSO One, which is currently in development.
+
+---
+
+## Questions?
+
+73!
+
+Note:
+Open the floor for questions.
+                </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealNotes]
+        });
+    </script>
+</body>
+</html>
