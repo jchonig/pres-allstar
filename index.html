@@ -105,7 +105,7 @@ with an interactive map of node locations across the US and internationally.
 
 ## Uses
 
-- Personal hotspot — see [Hotspot Deep-Dive](hotspot.html)
+- Personal hotspot — see [Setting up a Hotspot](hotspot.html)
 - Linking two or more repeaters
 - Conference bridges / hubs (radioless nodes)
 - Remote base station (including access to a remote repeater)
@@ -602,11 +602,11 @@ Ampersand was started in October 2025 by Bruce MacKinnon KC1FSZ of the Wellesley
 
 ## These Presentations
 
-[AllStar Presentation](https://jchonig.github.io/pres-allstar/) — [Hotspot Deep-Dive](https://jchonig.github.io/pres-allstar/hotspot.html)
+[AllStar Presentation](index.html) — [Setting up a Hotspot](hotspot.html)
 
 [github.com/jchonig/pres-allstar](https://github.com/jchonig/pres-allstar)
 
-Feedback and corrections welcome — please submit an issue on the GitHub repo.
+Feedback and corrections welcome — please submit issues on the GitHub repo.
 
 ---
 
@@ -633,6 +633,10 @@ Point people to these resources for getting started and setting up their own nod
 
 73!
 
+Jeffrey Honig — N2VLV
+
+[n2vlv.net](https://n2vlv.net/) — [n2vlv@honig.net](mailto:n2vlv@honig.net)
+
 Note:
 Open the floor for questions.
                 </textarea>
@@ -648,6 +652,12 @@ Open the floor for questions.
         Reveal.initialize({
             hash: true,
             plugins: [RevealMarkdown, RevealNotes]
+        });
+        Reveal.on('ready', () => {
+            document.querySelectorAll('a[href^="http"]').forEach(a => {
+                a.setAttribute('target', '_blank');
+                a.setAttribute('rel', 'noopener noreferrer');
+            });
         });
     </script>
 </body>

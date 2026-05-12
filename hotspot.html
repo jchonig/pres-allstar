@@ -91,6 +91,8 @@ and they're on the air.
 
 ## SHARI PiZero
 
+<!-- .slide: style="font-size: 0.75em;" -->
+
 [kits4hams.com/shari-pizero](https://kits4hams.com/shari-pizero) — **$205** assembled
 
 - Raspberry Pi Zero 2W + NiceRF SA818 radio module
@@ -100,6 +102,8 @@ and they're on the air.
 - Hammond aluminum enclosure (~3.25 × 2.25 × 1")
 - 250–500 mW RF output
 - Also available as a kit ($100) or parts-only
+
+[Setup guide (PDF)](https://kits4hams.com/wp-content/uploads/2026/01/SHARI-PiZero-Allstar-Node-Setup-Procedure-Version-1.02.pdf)
 
 Note:
 The SHARI PiZero is one of the most popular hotspot kits.
@@ -111,6 +115,8 @@ Add $9 for US shipping. Also available in a kit form for the builder.
 
 ## HotSpotRadio
 
+<!-- .slide: style="font-size: 0.75em;" -->
+
 [hotspotradios.com/hotspotradio](https://hotspotradios.com/hotspotradio) — **$298 + $18 shipping**
 
 - Raspberry Pi 3B with custom PiHat
@@ -119,6 +125,8 @@ Add $9 for US shipping. Also available in a kit form for the builder.
 - Arrives pre-configured — no audio adjustment needed
 - PTT, COR, and Heartbeat status LEDs
 - C4LABS case, 5.1V/2.5A power supply, and antenna included
+
+[Setup guide (PDF)](https://img1.wsimg.com/blobby/go/ff059e81-344b-4c02-a7fa-7e64e47ae407/downloads/HotSpotRadio%20Construction%20and%20Configuration%20Ve.pdf)
 
 Note:
 The HotSpotRadio ships with your node number, frequency, and CTCSS
@@ -130,6 +138,8 @@ The 6-second power button provides a safe shutdown.
 
 ## ClearNode
 
+<!-- .slide: style="font-size: 0.75em;" -->
+
 [node-ventures.com/buy-clearnode](https://www.node-ventures.com/buy-clearnode/) — **$495**
 
 - Raspberry Pi-based with integrated UHF or VHF transceiver
@@ -137,6 +147,8 @@ The 6-second power button provides a safe shutdown.
 - **Mobile app** (iOS and Android) for remote control and configuration
 - WiFi setup without SSH or terminal
 - Requires a valid amateur radio license to purchase
+
+[Getting started](https://www.node-ventures.com/getting-started/) — [YouTube: Introduction to ClearNode and Allstar](https://www.youtube.com/watch?v=5at_1Cq5F_8)
 
 Note:
 The ClearNode stands out for its mobile app — you can configure and control
@@ -157,6 +169,8 @@ Higher price point reflects the polished software ecosystem.
 - One of the original AllStar personal hotspots
 - Configure and operate entirely through the touchscreen
 
+[User manual (PDF)](http://micro-node.com/nano-ae_user.pdf)
+
 Note:
 The Micro-Node Nano-AE-M1 is notable for its LCD touchscreen interface —
 you don't need SSH or a web browser to connect to nodes.
@@ -167,7 +181,9 @@ Check the store at micro-node.com/store/ for current pricing.
 
 ## AllScan Complete Nodes
 
-[allscan.info/products](https://allscan.info/products/) — **$229 and up**
+<!-- .slide: style="font-size: 0.75em;" -->
+
+[allscan.info/products/#nodes](https://allscan.info/products/#nodes) — **$229 and up**
 
 All pre-configured with ASL3, AllScan, and Allmon3:
 
@@ -180,6 +196,8 @@ All pre-configured with ASL3, AllScan, and Allmon3:
 - Radio-less nodes use a speaker-mic or headset — no RF transmitted
 - Several additional models available on their website
 
+[Node setup instructions](https://allscan.info/docs/Instructions.php?prtype=n&nodetype=r) — [YouTube: AllScan Full Install](https://www.youtube.com/watch?v=wRQ43qFdcko)
+
 Note:
 AllScan is best known as a web-based node monitoring tool,
 but they also sell complete nodes.
@@ -187,6 +205,46 @@ Radio nodes use Retevis RT85 handhelds connected to a URI (USB Radio Interface).
 The Dell Wyse 3040 MiniPC is a compact fanless PC well-suited for always-on nodes.
 Other models include ANH100, ANR100 ($259), ANR150 ($279), and ANR100-LT ($269 + laptop).
 All nodes ship fully configured and ready to register.
+
+---
+
+## G1LRO RNL-Z2
+
+<!-- .slide: style="font-size: 0.75em;" -->
+
+[g1lro.uk/?p=921](https://g1lro.uk/?p=921) — **£159** (+ tax & shipping, UK-based)
+
+- Plug-and-play radio-less AllStar node
+- Color screen, built-in speaker, and included microphone
+- Sturdy aluminum enclosure with front-panel controls
+- No PC required — configure via smartphone or laptop
+- Requires WiFi (or phone hotspot) and an AllStarLink node number
+
+[YouTube: RNL-Z2 Setup & Overview](https://www.youtube.com/watch?v=4KuPzM7YSm4)
+
+Note:
+The RNL-Z2 is a radio-less node from G1LRO in the UK.
+It ships as a complete unit — just add WiFi and a node number.
+The color screen and built-in audio make it a tidy desktop unit.
+Pricing is in GBP; check the store for current shipping costs to your region.
+
+---
+
+## Radio-less Nodes
+
+- A node with **no radio** — connects to AllStar purely over the internet
+- Use a speaker-mic, headset, or softphone instead of an HT
+- Useful for hubs, conference bridges, and monitoring
+- Great for EmComm operators who want to join a net without RF
+- A laptop or desktop can be a radio-less node
+
+Note:
+Radio-less nodes are full AllStar nodes — they have a node number,
+can connect to and from any other node, and can host nets.
+The only difference is there's no RF link: audio goes in and out
+via a USB speaker-mic, headset, or softphone client.
+The AllScan ANR series uses a UCI (USB Console Interface) for this purpose.
+This is also what the AllScan radioless node and the Random Wire #180 episode cover.
 
 ---
 
@@ -261,10 +319,10 @@ flash the SD card, boot, and follow the web setup wizard.
 
 ## Softphones
 
-Connect to AllStar without a radio
+Connect to AllStar without a radio — via AllStar network login or directly to your node
 
 - **RepeaterPhone** (iOS) — [repeaterphone.com](https://repeaterphone.com/)
-- **Tranceive** (macOS) — connects directly to your node
+- **Tranceive** (macOS)
 - **Android** — no mature option yet; **QSO One** ([qso1.net](https://qso1.net/)) is coming
 - **Windows** — **QSO One** is also coming for Windows
 
@@ -281,6 +339,10 @@ Android and Windows users are waiting on QSO One, which is currently in developm
 
 73!
 
+Jeffrey Honig — N2VLV
+
+[n2vlv.net](https://n2vlv.net/) — [n2vlv@honig.net](mailto:n2vlv@honig.net)
+
 Note:
 Open the floor for questions.
                 </textarea>
@@ -296,6 +358,12 @@ Open the floor for questions.
         Reveal.initialize({
             hash: true,
             plugins: [RevealMarkdown, RevealNotes]
+        });
+        Reveal.on('ready', () => {
+            document.querySelectorAll('a[href^="http"]').forEach(a => {
+                a.setAttribute('target', '_blank');
+                a.setAttribute('rel', 'noopener noreferrer');
+            });
         });
     </script>
 </body>
