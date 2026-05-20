@@ -31,7 +31,7 @@
 
             <section data-markdown>
                 <textarea data-template>
-# AllstarLink
+# AllStarLink
 ### <!-- .element: style="font-size: 0.7em;" --> Repeaters, Hotspots and Nodes, Oh My!
 
 ![N2VLV](https://n2vlv.net/images/n2vlv.png) <!-- .element: style="height: 150px; border: none; background: none; box-shadow: none;" -->
@@ -43,12 +43,12 @@ Jeffrey Honig — N2VLV
 <img src="assets/alpaca.png" style="position: absolute; bottom: 1em; right: 1em; height: 50px; opacity: 0.7;">
 
 Note:
-Welcome everyone. Today we'll be talking about AllStar Link,
+Welcome everyone. Today we'll be talking about AllStarLink,
 a VoIP-based system for linking amateur radio repeaters and nodes.
 
 ---
 
-## What is AllstarLink?
+## What is AllStarLink?
 
 - VoIP interconnect system for amateur radio
 - Based on Asterisk PBX software with the **app_rpt** module
@@ -58,7 +58,7 @@ a VoIP-based system for linking amateur radio repeaters and nodes.
 - Free node registration at allstarlink.org
 
 Note:
-AllstarLink uses the open-source Asterisk telephony engine
+AllStarLink uses the open-source Asterisk telephony engine
 adapted for amateur radio use via the app_rpt module written by Jim Dixon W6JL.
 Anyone can register a node for free at allstarlink.org.
 
@@ -69,7 +69,7 @@ Anyone can register a node for free at allstarlink.org.
 - Created by Jim Dixon, W6JL
 - Built on the Asterisk open-source PBX
 - First released in the early 2000s
-- Now maintained by the AllstarLink community
+- Now maintained by the AllStarLink community
 
 Note:
 Jim Dixon saw the potential of using VoIP and open-source
@@ -81,8 +81,8 @@ telephony software to link amateur radio systems.
 
 - **EchoLink** — PC/mobile app, simple to use, closed source
 - **IRLP** — Dedicated hardware, Linux-based, node-to-node
-- **AllstarLink** — Most flexible, open source, Asterisk-based
-- AllstarLink can link to EchoLink nodes
+- **AllStarLink** — Most flexible, open source, Asterisk-based
+- AllStarLink can link to EchoLink nodes
 
 Note:
 Compare the three main VoIP linking systems.
@@ -90,9 +90,9 @@ Each has trade-offs in complexity vs. flexibility.
 
 ---
 
-## AllstarLink Network
+## AllStarLink Network
 
-![AllstarLink USA Node Map](assets/Allstar%20Map%20US.jpeg) <!-- .element: style="height: 450px; border: none; box-shadow: none;" -->
+![AllStarLink USA Node Map](assets/Allstar%20Map%20US.jpeg) <!-- .element: style="height: 450px; border: none; box-shadow: none;" -->
 
 US nodes shown — worldwide network at [stats.allstarlink.org](https://stats.allstarlink.org/)
 
@@ -111,7 +111,7 @@ with an interactive map of node locations across the US and internationally.
 - Remote base station (including access to a remote repeater)
 
 Note:
-AllstarLink is versatile — from a simple hotspot on your desk
+AllStarLink is versatile — from a simple hotspot on your desk
 to linking repeater networks across states or countries.
 Conference bridges and hubs are radioless nodes — no radio required,
 just software routing audio between connected nodes.
@@ -120,7 +120,7 @@ just software routing audio between connected nodes.
 
 ## Node Types
 
-![Four types of AllstarLink nodes](assets/Nodes.png) <!-- .element: style="height: 480px; border: none; box-shadow: none;" -->
+![Four types of AllStarLink nodes](assets/Nodes.png) <!-- .element: style="height: 480px; border: none; box-shadow: none;" -->
 
 Note:
 Four node types: Hotspot Node (HTs via internet), Radio Node (remote repeater access),
@@ -132,19 +132,19 @@ Repeater Node (full repeater system), and Conference Bridge (virtual hub, radiol
 
 <!-- .slide: style="font-size: 0.75em;" -->
 
-- **Scheduled nets** — hundreds of recurring nets on AllstarLink hubs (e.g. [allstarnets.org](https://allstarnets.org/))
+- **Scheduled nets** — hundreds of recurring nets on AllStarLink hubs (e.g. [allstarnets.org](https://allstarnets.org/))
 - **Remote repeater access** — key into your home repeater from anywhere in the world
-- **Emergency communications** — ARES/RACES groups use AllstarLink for backup linking and interoperability
-- **Skywarn** — weather nets often coordinate via AllstarLink hubs
+- **Emergency communications** — ARES/RACES groups use AllStarLink for backup linking and interoperability
+- **Skywarn** — weather nets often coordinate via AllStarLink hubs
 - **Club coordination** — link club repeaters during events, contests, or public service
 - **Portable/travel operation** — connect a Pi hotspot from anywhere to your home repeater
 - **Monitoring/listening** — tune into nets and repeaters worldwide without transmitting
 
 Note:
-allstarnets.org maintains a directory of scheduled nets running on AllstarLink — a great resource
+allstarnets.org maintains a directory of scheduled nets running on AllStarLink — a great resource
 to point new users to. Remote access is a killer feature: if you're traveling, a hotspot node
 lets you participate in your local repeater's nets from a hotel room anywhere in the world.
-EmComm groups value AllstarLink for its resilience and ability to bridge otherwise isolated repeaters.
+EmComm groups value AllStarLink for its resilience and ability to bridge otherwise isolated repeaters.
 
 ---
 
@@ -156,7 +156,7 @@ EmComm groups value AllstarLink for its resilience and ability to bridge otherwi
 - Examples: WIN System, HubNet, etc.
 
 Note:
-Hubs on AllstarLink serve the same role as Wires-X rooms — a central always-on node
+Hubs on AllStarLink serve the same role as Wires-X rooms — a central always-on node
 that multiple stations connect to for group communication.
 Hubs provide community gathering points for scheduled and informal nets.
 
@@ -169,7 +169,7 @@ Hubs provide community gathering points for scheduled and informal nets.
 Nodes connected to the HubNet UK hub (nodes 4334 & 3143)
 
 Note:
-This is a real-time connection map of HubNet UK, a UK-based AllstarLink hub network.
+This is a real-time connection map of HubNet UK, a UK-based AllStarLink hub network.
 Each oval represents an individual node — repeaters, hotspots, and linking nodes —
 all connected into the central hub nodes 4334 and 3143.
 The tree structure illustrates how a hub aggregates many nodes into a single conference point.
@@ -181,7 +181,7 @@ Highlighted nodes (pink/red) are typically sub-hubs or nodes with their own conn
 
 - Servers run Asterisk with app_rpt module
 - Nodes connect to radios via audio interfaces
-- Nodes register with the AllstarLink network
+- Nodes register with the AllStarLink network
 - Audio transported over the internet as VoIP
 - Two channel drivers for USB interfaces: **simpleusb** and **usbradio**
 
@@ -251,7 +251,7 @@ an EchoLink bridge node, and a hub node all from one server.
 - Internet connection required (except for a repeater)
 
 Note:
-Almost any Linux computer can run AllstarLink. Raspberry Pi is the
+Almost any Linux computer can run AllStarLink. Raspberry Pi is the
 most common choice for hotspots due to size, cost, and community support.
 
 ---
@@ -259,7 +259,7 @@ most common choice for hotspots due to size, cost, and community support.
 ## Hardware — Sound Cards and Interfaces
 
 - **DigiRig** — Clean, purpose-built USB audio/PTT interface
-- **TOADS DI** — Digital interface for AllstarLink
+- **TOADS DI** — Digital interface for AllStarLink
 - **AIOC** — All-In-One Cable, integrates directly with radio
 - URI (USB Radio Interface) — legacy but still used
 - Modified CM108-based adapters
@@ -281,7 +281,7 @@ HotspotRadioUSB is a popular integrated option.
 
 ## Software
 
-- **ASL3** — Current official AllstarLink distribution
+- **ASL3** — Current official AllStarLink distribution
 - **HamVoip** — Alternative distribution, Arch Linux based
 - Both based on Asterisk with app_rpt
 - Debian/Raspberry Pi OS (ASL3) vs. Arch Linux (HamVoip)
@@ -292,7 +292,7 @@ HamVoip is an alternative with its own following.
 
 ---
 
-## Setting Up AllstarLink
+## Setting Up AllStarLink
 
 1. **Sign up** at [allstarlink.org/register](https://allstarlink.org/register/index.php)
 2. **Wait for approval** — license is verified by the helpdesk
@@ -309,7 +309,7 @@ you need a server before you can add a node to it.
 
 ## Login: Account Settings
 
-![AllstarLink Account Settings](assets/Portal_Account_settings.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+![AllStarLink Account Settings](assets/Portal_Account_settings.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
 
 Note:
 After logging in, verify your account settings — callsign, email, and contact info.
@@ -319,17 +319,17 @@ Your PIN is auto-generated and used for phone access.
 
 ## Add a Server: Server List
 
-![AllstarLink Servers list](assets/Portal_Servers.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+![AllStarLink Servers list](assets/Portal_Servers.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
 
 Note:
 The Servers page lists all servers under your account. Click "Add New Server" to create one.
-A server is the AllstarLink name for the computer running Asterisk + app_rpt.
+A server is the AllStarLink name for the computer running Asterisk + app_rpt.
 
 ---
 
 ## Add a Server: Server Settings
 
-![AllstarLink Server Settings](assets/Portal_Server.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+![AllStarLink Server Settings](assets/Portal_Server.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
 
 Note:
 Fill in server name, location, and latitude/longitude. IAX port defaults to 4569 UDP —
@@ -339,7 +339,7 @@ must be open on your firewall. Proxy IP is rarely needed.
 
 ## Add a Node: Node List
 
-![AllstarLink Nodes list](assets/Portal_Nodes.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+![AllStarLink Nodes list](assets/Portal_Nodes.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
 
 Note:
 The Nodes page shows all registered nodes. NNX nodes (6-digit) are shown with the NNX column marked Yes.
@@ -349,7 +349,7 @@ Click a node number to edit it. Use Node Management to request new numbers or ex
 
 ## Add a Node: Node Settings
 
-![AllstarLink Node Settings](assets/Portal_Node.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
+![AllStarLink Node Settings](assets/Portal_Node.png) <!-- .element: style="height: 500px; border: none; box-shadow: none;" -->
 
 Note:
 Node settings include the password (used in ASL3 config), callsign, frequency, CTCSS tone,
@@ -359,12 +359,12 @@ and which server the node belongs to. Most options like reverse autopatch can be
 
 ## Installing ASL3
 
-- **ASL3** is the current AllstarLink software distribution
+- **ASL3** is the current AllStarLink software distribution
 - Runs on Raspberry Pi or any Debian-based Linux system
 - Install guide: [Raspberry Pi Appliance (Detailed)](https://allstarlink.github.io/install/pi-appliance/pi-detailed/#software-updates)
 
 Note:
-The Pi appliance install uses Raspberry Pi Imager with a custom AllstarLink repository URL.
+The Pi appliance install uses Raspberry Pi Imager with a custom AllStarLink repository URL.
 Walk people to the wiki for step-by-step instructions.
 
 ---
@@ -383,7 +383,7 @@ From here you can access the Web Admin Portal, manage Node Links, and reach the 
 
 ## Web Admin Portal
 
-- Browser-based administration of your AllstarLink server
+- Browser-based administration of your AllStarLink server
 - Based on **[Cockpit](https://cockpit-project.org/)** — an open-source Linux server manager
 - Access at `https://nodeNNNNNN.local/admin`
 - Manage system, networking, storage, services, and terminal
@@ -391,7 +391,7 @@ From here you can access the Web Admin Portal, manage Node Links, and reach the 
 
 Note:
 Cockpit is a widely-used open-source web console for Linux servers.
-ASL3 builds on it to provide a fully integrated management interface for AllstarLink nodes.
+ASL3 builds on it to provide a fully integrated management interface for AllStarLink nodes.
 
 ---
 
@@ -494,7 +494,7 @@ Freddie Mac's video is a well-regarded walkthrough of the full ASL3 setup proces
 
 Note:
 DTMF commands are the primary way operators interact
-with AllstarLink from the radio side.
+with AllStarLink from the radio side.
 
 ---
 
@@ -502,30 +502,30 @@ with AllstarLink from the radio side.
 
 <!-- .slide: style="font-size: 0.75em;" -->
 
-- AllstarLink nodes can connect to EchoLink nodes
+- AllStarLink nodes can connect to EchoLink nodes
 - Bridges the two networks together — expands reach to EchoLink users worldwide
-- EchoLink node numbers are mapped into AllstarLink:
+- EchoLink node numbers are mapped into AllStarLink:
   - Pad the EchoLink node number to 6 digits, then prefix with `3`
-  - EchoLink node `1234` → AllstarLink node `3001234`
-  - EchoLink node `123456` → AllstarLink node `3123456`
+  - EchoLink node `1234` → AllStarLink node `3001234`
+  - EchoLink node `123456` → AllStarLink node `3123456`
 - Connect via normal DTMF: `*3` followed by the 7-digit translated number
 
 Note:
-The "3" prefix reserves a dedicated namespace in AllstarLink for EchoLink nodes.
-Zero-pad the EchoLink number to 6 digits first, then prepend the 3 for a 7-digit AllstarLink node number.
+The "3" prefix reserves a dedicated namespace in AllStarLink for EchoLink nodes.
+Zero-pad the EchoLink number to 6 digits first, then prepend the 3 for a 7-digit AllStarLink node number.
 Reference: https://allstarlink.github.io/adv-topics/echolink/
 
 ---
 
 ## Digital Radio Integration
 
-- AllstarLink is primarily analog FM
+- AllStarLink is primarily analog FM
 - **DVSwitch** — Bridge to DMR, D-STAR, YSF, P25, NXDN
-- Connects analog AllstarLink to digital networks
+- Connects analog AllStarLink to digital networks
 - Other digital bridge solutions available
 
 Note:
-DVSwitch and similar tools let AllstarLink nodes
+DVSwitch and similar tools let AllStarLink nodes
 interoperate with digital voice modes.
 
 ---
@@ -539,14 +539,14 @@ interoperate with digital voice modes.
 
 Note:
 Both provide web interfaces for monitoring and managing
-your AllstarLink node remotely.
+your AllStarLink node remotely.
 
 ---
 
 ## Demo: Hotspot
 
 Note:
-Live demo of connecting and using an AllstarLink hotspot.
+Live demo of connecting and using an AllStarLink hotspot.
 
 ---
 
@@ -586,7 +586,7 @@ Etiquette is especially important on linked systems — your signal reaches many
 
 <!-- .slide: style="font-size: 0.8em;" -->
 
-**[Ampersand](https://mackinnon.info/ampersand/) (KC1FSZ)** — AllStar linking without Asterisk
+**[Ampersand](https://mackinnon.info/ampersand/) (KC1FSZ)** — AllStarLink linking without Asterisk
 
 - Asterisk is powerful but complex — overkill for amateur radio linking
 - Ampersand replaces it with a minimal, ham-radio-focused stack
@@ -602,7 +602,7 @@ Ampersand was started in October 2025 by Bruce MacKinnon KC1FSZ of the Wellesley
 
 ## These Presentations
 
-[AllStar Presentation](index.html) — [Setting up a Hotspot](hotspot.html)
+[AllStarLink Presentation](index.html) — [Setting up a Hotspot](hotspot.html)
 
 [github.com/jchonig/pres-allstar](https://github.com/jchonig/pres-allstar)
 
@@ -615,9 +615,9 @@ Feedback and corrections welcome — please submit issues on the GitHub repo.
 <!-- .slide: style="font-size: 0.8em;" -->
 
 **Software & Community**
-- [allstarlink.org](https://allstarlink.org/) — [AllstarLink Wiki](https://wiki.allstarlink.org/)
+- [allstarlink.org](https://allstarlink.org/) — [AllStarLink Wiki](https://wiki.allstarlink.org/)
 - [Ham Radio Crusader](https://youtube.com/@HamRadioCrusader) (YouTube — setup guides)
-- [AllstarLink community on Discord](https://discord.gg/allstarlink) — [groups.io](https://groups.io/g/Allstar)
+- [AllStarLink community on Discord](https://discord.gg/allstarlink) — [groups.io](https://groups.io/g/Allstar)
 
 **Hardware**
 - [HotSpot Radios](https://hotspotradios.com/) — [AURSINC — AllStar Node Pi-hats](https://www.aursinc.com/collections/allstar-node)
