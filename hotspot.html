@@ -303,17 +303,21 @@ This is a cheap insurance policy against losing your node configuration.
 
 ## Building a Node
 
-*(Coming soon)*
+*(TODO)*
 
-- Install ASL3 using the Pi Appliance image
-- Register your node at allstarlink.org
-- Configure via the web admin portal (Cockpit)
-- Set frequency, CTCSS, and audio levels with asl-menu
+1. Register with AllstarLink — see [main presentation](index.html)
+2. Install ASL3: [allstarlink.github.io/install](https://allstarlink.github.io/install/)
+3. Pi Appliance detailed install: [allstarlink.github.io/install/pi-appliance/pi-detailed](https://allstarlink.github.io/install/pi-appliance/pi-detailed/)
+4. Device-specific radio setup *(pick one example — TBD)*
+
+*(TODO: Add slides on recommended configuration and using the hotspot)*
 
 Note:
-Detailed build instructions will be added here.
-The AllStar Pi Appliance image makes installation straightforward —
-flash the SD card, boot, and follow the web setup wizard.
+Content to be developed:
+- Step through the Pi Appliance install guide
+- Choose one radio interface as a worked example for device-specific setup
+- Follow-on slides needed: recommended node configuration (asl-menu, CTCSS, audio levels)
+  and practical usage (connecting to nodes, DTMF commands, monitoring with Allmon3/AllScan)
 
 ---
 
@@ -322,16 +326,30 @@ flash the SD card, boot, and follow the web setup wizard.
 Connect to AllStar without a radio — via AllStar network login or directly to your node
 
 - **RepeaterPhone** (iOS) — [repeaterphone.com](https://repeaterphone.com/)
-- **Tranceive** (macOS)
-- **Android** — no mature option yet; **QSO One** ([qso1.net](https://qso1.net/)) is coming
-- **Windows** — **QSO One** is also coming for Windows
+- **Transceive** (macOS) — [transceive.app/help/setup](https://transceive.app/help/setup)
+- **DVSwitch Mobile** (Android) — available on [Play Store](https://play.google.com/store/apps/details?id=org.dvswitch&hl=en_US)
+- **Windows** — [QSO One](https://qso1.net) is coming — [qso1.net](https://qso1.net)
 
 Note:
 Softphones connect to your AllStar node over the internet
 and let you use it like a walkie-talkie from your phone or computer.
 RepeaterPhone is the most polished option on iOS.
-Tranceive is a clean native macOS app.
-Android and Windows users are waiting on QSO One, which is currently in development.
+Transceive is a clean native macOS app.
+DVSwitch Mobile is available on Android via the Play Store.
+Windows users are waiting on QSO One, which is currently in development.
+
+---
+
+## Setting Up a Softphone
+
+- First, **register with AllStarLink** —
+[allstarlink.org/register](https://allstarlink.org/register/index.php) - You will need these credentials
+- For **macOS**: Tranceive - [transceive.app/help/setup](https://transceive.app/help/setup)
+- For **Android and iOS**: DV Switch Mobile and Repeaterphone [msuarc.egr.msu.edu/how-to-use-allstar-instead-of-echolink-on-phones](https://msuarc.egr.msu.edu/how-to-use-allstar-instead-of-echolink-on-phones/)
+
+Note:
+Before a softphone can connect, you need an AllStarLink account — the same account used to register a node.
+The MSU ARC guide walks through the softphone setup process step by step for both Android and iOS.
 
 ---
 
